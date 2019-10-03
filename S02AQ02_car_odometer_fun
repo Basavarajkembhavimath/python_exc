@@ -1,0 +1,45 @@
+"""
+S02AQ02
+Re-write the earlier question of S02Q02 using functions :
+
+     - Using the starting and ending values of your car’s odometer, 
+            and the measure of fuel consumed, 
+            calculate the number of stops one should make for refuelling 
+            while travelling from Bangalore to Goa, 
+            a distance of 560 kms.
+"""
+
+def substraction(a, b):
+    substraction = (a - b)
+    return substraction
+
+def division(a, b):
+    division = (a / b)
+    return division
+
+def user_input():
+    a = int(input("enter the starting value"))
+    e = int(input("enter the ending value"))
+    tank_capacity = 26
+    car_mileage = 21
+    enter_the_total_distance = 560
+    return a, e, tank_capacity, car_mileage, enter_the_total_distance
+
+def main ():
+    v,w,x,y,z = user_input()
+    fuele_consumpation = division(substraction(w, v),y)
+    num_of_stops = division(fuele_consumpation, x)
+    print("fuele_consumpation", fuele_consumpation)
+    print("num_of_stops", num_of_stops)
+
+
+#main program starts from here
+
+main()
+    
+                      
+                      
+                      
+                              
+    
+
