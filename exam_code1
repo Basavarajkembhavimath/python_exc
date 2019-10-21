@@ -1,0 +1,39 @@
+"""
+
+Coding Exam Question 11
+Write a Python program to print the first 12 "even" Fibonacci numbers.
+
+Assume Fibonacci numbers start from 1 and 1
+
+"""
+
+
+
+
+print("first 12 even fibonacci numbers are : ")
+a = 1
+b = 1
+print(a)
+print(b)
+for i in range(1,13):
+    a = (a + b)
+    e = a % 2
+    b = (a + b)
+    d = b % 2
+    if e == 0:
+        print(a)
+        
+    elif d == 0:
+        print(b)
+
+
+
+
+
+
+
+
+
+
+
+
