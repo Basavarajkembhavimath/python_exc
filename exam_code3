@@ -1,0 +1,22 @@
+""""
+Coding Exam Question 13
+
+        Ask the user to enter a 3 digit number till he enters 0
+        Print the square root of only 3 digit positive numbers.
+
+        Make sure that the program does not print the square root of any number
+        that is not a 3 digit number
+
+
+"""
+
+x = 1
+while x != 0:
+    x = int(input("enter a 3 digit number till he enters 0 : "))
+    if x >= 100 and x < 1000:
+        m = int(x)**0.5
+        print("your 3 digit number square root is : ",int(m))
+    elif x < 0:
+        print("no negative or flot value please")
+else:
+    print("it is not a 3 digit number")
