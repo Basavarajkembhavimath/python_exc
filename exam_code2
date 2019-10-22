@@ -1,0 +1,85 @@
+"""
+Brilliant School conducts an exam in subjects of English, Science and Mathematics.
+Science exam is split up as Science Theory and Science Practical
+
+The maximum marks for each subject is as follows : 
+          -- English : 75 marks
+          -- Science Theory : 75 marks
+          -- Science Practical : 25 marks
+          -- Science = Science Theory + Science Practical : 100 marks
+          -- Mathematics : 100 marks
+
+The pass marks for each subject is as follows :
+          -- Pass marks for English : 25
+          -- Pass marks for Science Theory : 25
+          -- Pass marks for Science Practical : 8
+          -- Pass marks for Science : 35
+          -- Pass marks for Mathematics : 35
+
+Write a Python program to collect the marks scored by a student in all the above 4 exams
+Based on the marks scored by the student, grade them according to the following criteria :
+          -- Grade A : if Total > 90%
+          -- Grade B : if Total > 75%
+          -- Fail is any score is less than pass marks
+          -- Average otherwise
+
+Note : A student who scores only Pass marks in Science Theory and Science Practical 
+            will have a total of 33 [ 25 + 8 ] 
+            and this still falls short of the Pass marks for Science [ 35 ]
+            and is considered as Fail.
+
+
+"""
+def add1(a, b):
+    return(a + b)
+
+def add(a, b, c, d):
+    return(a + b + c + d)
+
+def persentage(a):
+    return((a / 275)*100)
+
+def user_input():
+    u = int(input("enter your scored english marks less then 75 :"))
+    v = int(input("enter your scored Science Theory marks less then 75 : "))
+    w = int(input("enter your scored Science Practical marks less then 25 : "))
+    x = int(input("enter your scored Mathematics marks less then 100 : "))
+    return u, v, w, x
+
+def main():
+    
+    u, v, w, x = user_input()
+    f = add1(v, w)
+    g = add(u, v, w, x)
+    h = int( persentage(g))
+    
+    
+    if u >= 25 and u<=75 and v >= 25 and v<=75 and w >= 8 and w <= 25 and x >=35 and  x<= 100:
+        if f >= 35:
+            if h >= 35 and h <=75:
+                print("average and yor marks is :",h,"%")
+            elif h > 75 and h <= 90:
+                print("B grade and your marks is :",h,"%")
+            elif h > 90 and h <=100:
+                print("A grade and your marks is :",h,"%")
+        
+        else:
+            print(" your failed in science")
+
+    else:
+        print("student is failed")
+                
+
+main()
+        
+            
+            
+    
+
+
+
+
+
+
+
+    
