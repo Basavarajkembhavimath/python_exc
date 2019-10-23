@@ -1,0 +1,45 @@
+""" mini project"""
+
+def user_input():
+    a = int(input("enter your passcode : "))
+    return a
+
+def main():
+    print("your input should be less then 25")
+    y = 12
+    c = 0
+    while c < 4:
+        x = user_input()
+        if x >=(y-2) and x < y or x > y and x <= (y+2):
+            print("InVaLiD PaSsCoDe")
+            c = c + 1
+        elif x < (y-2):
+            print("invalid passcode")
+            c = c + 1
+        elif x > (y+2) and x <= 25:
+            print("INVALID PASSCODE")
+            c = c + 1
+        elif x > 25:
+            print("you reached the maximumu limit of input, It should be less then : 25 :")
+            break
+        elif x == y:
+            print("WELCOME !!!")
+            break
+        
+    while c == 4 and c < 5:
+        print("This is your last chance please enter your correct passcode")
+        x = user_input()
+        if x == y:
+            print("WELCOME !!!")
+            c = c + 1
+        else:
+            print("Login FAILED !!!")
+            c = c + 1
+
+
+main()
+
+            
+        
+
+        
