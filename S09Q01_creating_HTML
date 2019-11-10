@@ -28,3 +28,37 @@ print("         story ends")
 print("     <p>")
 print(" </body>")
 print("</html>")
+
+
+
+
+"""
+S09Q01
+Write a program that generates a HTML webpage. 
+Prompt the user for webpage title and webpage body contents. 
+The webpage body should contain 
+ - one main header, 
+ - one sub header, and 
+ - at least 2 paragraphs.
+
+A sample output is shown below :
+
+"""
+print("<html>","\n",
+"  <head>","\n",
+"     <title>","\n",
+"           My Webpage title</h2>","\n",
+"     </title>","\n",
+"  </head>","\n",
+"  <body> ","\n",
+"     <h1>webpage Banner </h1>","\n",
+"\n",
+"     <p> This is a simple story","\n",
+"         for my first webpage","\n",
+"     </p>","\n",
+"\n",
+"     <p> this is a how my sample","\n",
+"         story ends","\n",
+"     <p>","\n",
+" </body>","\n",
+"</html>")
