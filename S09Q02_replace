@@ -1,0 +1,27 @@
+"""
+S09Q02
+Write a search and replace program in Python. 
+This should first take the original text as input by prompting the user for it. 
+It should then, prompt the user for which word to search, 
+and what new word it should be replaced with.
+
+"""
+def user_input():
+    x = input("enter your word to search : ")
+    y = input("enter your word to replace : ")
+    return x,y
+
+with open("sample.txt")as note:
+    fh = note.readlines()
+    for i in fh:
+        print(i)
+    a,b = user_input()
+    for line in fh:
+        if a in line:
+            search = line.find(a)
+            print("your searched location is :",search,"\n")
+            replac = line.replace(a,b)
+            print("the word: ",a,",replaced with the word of:",b,",in this line: ","\n",line,"\n",replac)
+            break
+    else:
+        print("Your searched word is not in the paragrafh ") 
