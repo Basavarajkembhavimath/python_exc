@@ -1,0 +1,16 @@
+def add(a , b):
+    return a + b
+
+with open("13-11-2019.txt") as file:
+    FH = file.readlines()
+    numbers = list()
+    for line in FH:
+        n = int(line.strip())
+        numbers.append(n)
+    Total = sum(numbers)
+    lenth = len(numbers)
+    average = Total// lenth
+    print(Total)
+    print(average)
+    
+    
