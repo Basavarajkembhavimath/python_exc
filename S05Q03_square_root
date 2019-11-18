@@ -1,0 +1,23 @@
+"""
+S05Q03
+Take a number as input from the user. 
+           Print all the squares of numbers from 1 to any large number. 
+           The numbers printed should be less than 
+                 the number given as input by the user
+
+"""
+
+def user_input():
+    x = int(input("enter your number : "))
+    return x
+
+def square():
+    a = user_input()
+    for i in range(1,(a+1)):
+        square = i*i
+        if square < a:
+            print("Your square root out put is :")
+            print(square)
+
+
+square()
