@@ -1,0 +1,59 @@
+"""
+
+S05Q02
+     - Ask the user to enter a number till he enters 0. 
+          Print the maximum and minimum values among all entered numbers. 
+          Print the number of single, two and three digit numbers entered.
+
+
+"""
+
+def user_input():
+    x = int(input("enter your number : "))
+    return x
+
+def main():
+    a = 1
+    numbers = list()
+    single_digit = list()
+    two_digit = list()
+    three_digit = list()
+    while a != 0:
+        a = user_input()
+        if a != 0:
+            string = len(str(a))
+            print(string)
+            numbers.append(a)
+            maximum = max(numbers)
+            minimum = min(numbers)
+            
+            if string <= 1:
+                single_digit.append(a)
+            elif string > 1 and string <= 2:
+                two_digit.append(a)
+            elif string > 2 and string < 4:
+                print("It's a three digit numbers : ",a)
+                three_digit.append(a)
+            else:
+                print("its not a three digit numbers")
+    print("List of numbers are :")
+    print(numbers)
+    print("maximum number in the list is :",maximum)
+    print("minimum number in the list is :",minimum)
+    if (len(single_digit)) != 0:
+        print("single digit numbers are :")
+        print(single_digit)
+    else:
+        print("There is no Single digit numbers.")
+    if (len(two_digit)) != 0:
+        print("two digit numbers are :")
+        print(two_digit)
+    else:
+        print("There is no Two digit numbers.")
+    if (len(three_digit)) != 0:
+        print("three digit numbers are :")
+        print(three_digit)
+    else:
+        print("There is no Three digit numbers.")
+        
+main()
