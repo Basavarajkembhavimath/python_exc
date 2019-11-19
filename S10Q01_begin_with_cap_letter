@@ -1,0 +1,19 @@
+"""
+S10Q01
+Get the name of the text file from the user. 
+Check if all the sentences in that text file begin with a capital letter.
+
+"""
+
+def user_input():
+    x = input("Enter your file name : ")
+    return x
+a = user_input()
+
+with open(a) as file:
+    fh = file.readlines()
+    for line in fh:
+        if line[0].isupper():
+            print(line)
+    else:
+        print("The text line is not begine with the capital letter ") 
