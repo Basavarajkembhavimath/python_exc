@@ -1,0 +1,37 @@
+"""
+
+S05Q01
+- Print the multiplication table of a given number using “for” and “while” loops.
+
+"""
+
+def user_input():
+    x = int(input("enter your multiplication number in (for loop) : "))
+    return x
+
+def main():
+    mul = user_input()
+    for i in range(1,11):
+        mul1 = mul*i
+        print(mul,'x',i,' = ',mul1)
+
+
+#main starts from here
+
+main()
+
+def user_input():
+    x = int(input("enter your multiplication number in (while loop) : "))
+    return x
+
+def main1():
+    mul = user_input()
+    i = 1
+    while i <= 10:
+        mul1 = mul*i
+        print(mul,'x',i,' = ',mul1)
+        i += 1
+
+
+
+main1()
