@@ -1,0 +1,34 @@
+"""
+
+S11Q01
+From a file that contains a list of numbers.
+Find the maximum number in that list. 
+Also find the sum of all the numbers in that list.
+
+"""
+
+def user_input():
+    x = input("enter the file name")
+    return x
+
+def main():
+    count = 0
+    a = user_input()
+    with open(a) as file:
+        FH = file.readlines()
+        #print(FH)
+        all_line = []
+        for line in FH:
+            all_line1 = line.strip()
+            all_line.append(int(all_line1))
+        print(all_line)
+        print("maximum num in the list is : ",(max(all_line)))
+        print("sum of all num in list is : ",(sum(all_line)))
+
+
+
+
+main()
+        
+    
+    
