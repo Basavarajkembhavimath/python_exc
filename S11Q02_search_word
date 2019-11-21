@@ -6,18 +6,16 @@ Write a Python program that takes a file as the first argument
 This script should print only those lines that have the search word
 
 """
-def user_input():
-    x = input("enter your word to search : ")
-    return x
+import sys
+
 
 def main():
-    
-    with open("sample.txt")as note:
+    a = sys.argv[1]
+    b = sys.argv[2]
+    with open(a)as note:
         fh = note.readlines()
-        a = user_input()
         for line in fh:
-            print(line)
-            if a in line:
+            if b in line:
                 print(line)
 
 #main starts from here:
