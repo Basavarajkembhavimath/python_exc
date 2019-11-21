@@ -1,0 +1,24 @@
+"""
+S11Q02
+
+Write a Python program that takes a file as the first argument 
+   and a search word as the second argument. 
+This script should print only those lines that have the search word
+
+"""
+def user_input():
+    x = input("enter your word to search : ")
+    return x
+
+def main():
+    
+    with open("sample.txt")as note:
+        fh = note.readlines()
+        a = user_input()
+        for line in fh:
+            print(line)
+            if a in line:
+                print(line)
+
+#main starts from here:
+main()
