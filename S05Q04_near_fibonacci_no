@@ -29,8 +29,6 @@ def closest():
     while total != 2:
             if z != 0:
                 z = z - 1
-                y = y + 1
-                print(z,y)
                 if (is_fibonacci(a) == True):
                     print(a ,"is a perfect fibonacci number")
                     break
