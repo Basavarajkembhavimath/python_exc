@@ -1,0 +1,63 @@
+"""
+
+S05Q04
+     - Check if a given number is a fibonacci number. 
+           If not, then print the closest fibonacci number to the given number
+
+"""
+import math
+def user_input():
+    x = int(input("enter your number : "))
+    return x
+def perfect_square(a):
+    s = int(math.sqrt(a))
+    return s*s == a
+
+def is_fibonacci(a):
+    return perfect_square(5*a*a + 4) or perfect_square(5*a*a - 4)
+
+def closest():
+    a = user_input()
+    z = a
+    y = a
+    count = 1
+    count1 = 1
+    total = 1
+    neg_near_val = 0
+    pos_near_val = 0
+    
+    while total != 2:
+            if z != 0:
+                z = z - 1
+                y = y + 1
+                print(z,y)
+                if (is_fibonacci(a) == True):
+                    print(a ,"is a perfect fibonacci number")
+                    break
+                if neg_near_val > 0 and pos_near_val > 0:
+                    total = 2
+                    print(neg_near_val,pos_near_val)
+                    break
+                if (is_fibonacci(z) == True) and count < 2:
+                    neg_near_val = z
+                    count += 1
+                 
+                elif (is_fibonacci(y) == True)and count1 < 2:
+                    pos_near_val = y
+                    count1 += 1
+
+                
+    if (is_fibonacci(a) == False):        
+        near_neg = a - neg_near_val
+        near_pos = pos_near_val - a
+        if near_neg > near_pos:
+            print(pos_near_val, "Is the nearest fibonacci number")
+        elif near_pos > near_neg :
+            print(neg_near_val, "Is the nearest fibonacci number")
+        elif near_neg == near_pos:
+            print(z,' 7 and',y,'are the nearest fibonacci number of the',a)
+
+                
+closest()
+
+
