@@ -10,13 +10,33 @@ import sys
 
 
 def main():
+
     a = sys.argv[1]
-    b = sys.argv[2]
-    with open(a)as note:
+    with open (a) as file:
+        FH = file.read()
+        print(FH)
+    with open(a) as note:
         fh = note.readlines()
+        
+        b = sys.argv[2]
+        count = 0
+        
         for line in fh:
             if b in line:
-                print(line)
+                if count == 0:
+                    print("your serched word is in these line :")
+                    print(line)
+                    count += 1
+                else:
+                    print(line)
+                    count += 1 
+        else:
+            if count == 0:
+            
+                print("Your searched word is not in the paragrafh ")
+
+
 
 #main starts from here:
 main()
+
