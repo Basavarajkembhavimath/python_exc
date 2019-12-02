@@ -7,15 +7,10 @@ Write the contents of this file to another file such that,
 
 """
 
-#import sys
-
-def user_input():
-    x = input("Enter your file name (exm : file.txt) : ")
-    return x
+import sys
 
 def main():
-   # a = sys.srgv[1]
-    a = user_input()
+    a = sys.argv[1]
     count = 0
     new_line = 0
     new_line2 = 0
@@ -23,32 +18,15 @@ def main():
     with open(a) as file:
         fh = file.readlines()
         new = ''
-        #newline = fh.split('.')
         for line in fh:
             new = new + line.strip()
-            
+        
         split_line = new.split('.')
         for i in split_line:
             print(i)
             fh1.write(i)
             fh1.write('\n')
     fh1.close()
-            
-            
-            
-            
-"""     
-    with open(b) as file2:
-        fh2 = file2.readlines()
-        for line2 in fh2:
-            newline2 = line2.find(".")
-            new_line2 = line2[0:newline2+1]
-            print(new_line2)
-
-
-"""
-            
-
 
 
 #main program starts from here :
