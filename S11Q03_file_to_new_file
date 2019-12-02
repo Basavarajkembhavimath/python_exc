@@ -21,36 +21,31 @@ Create a copy of the contents of this file satisfying the following conditions :
    - A sample input and output file is shown below
 
 """
+import sys
 def user_input():
     x = input("enter file name : ")
     return x
 def main():
-    a = user_input()
+    a = sys.argv[1]
     count = 0
     even_line = []
     with open(a) as file:
         FH = file.readlines()
-        if a == 'file.txt':
-            Nfile = open("file_new.txt",'w')
-            for line in FH:
-                print(line)
+        c = a[:-4]+'-new.txt'
+        Nfile = open(c,'w')
+        for line in FH:
+            print(line)
+            even_line.append(line)
+            count += 1
+            Nfile.write(line)
+            if count%2 == 0:
                 even_line.append(line)
-                count += 1
+                print(line)
                 Nfile.write(line)
-                if count%2 == 0:
-                    even_line.append(line)
-                    print(line)
-                    Nfile.write(line)
-            print(even_line[0])
-            Nfile.write(even_line[0])
-
-def main1():
-    with open("file_new.txt") as new:
-        FH1 = new.read()
-        print("the new file output is :")
-        print(FH1)
+        print(even_line[0])
+        Nfile.write(even_line[0])
+   
 
 #main starts from here
         
 main()
-main1()
