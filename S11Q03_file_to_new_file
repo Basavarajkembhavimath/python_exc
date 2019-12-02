@@ -22,9 +22,8 @@ Create a copy of the contents of this file satisfying the following conditions :
 
 """
 import sys
-def user_input():
-    x = input("enter file name : ")
-    return x
+
+
 def main():
     a = sys.argv[1]
     count = 0
