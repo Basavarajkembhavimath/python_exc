@@ -1,0 +1,39 @@
+"""
+
+S14Q03
+Ask the user to enter any 10 numbers as input. 
+Randomly pick any 5 numbers from this list 
+  but print them in the same order as given by the user.
+
+"""
+import random
+
+def main():
+    #generating 10 user inputs by random
+    print("10 user inputs:")
+    x = []
+    counter = 1
+    while counter <= 10:  
+        list_num = random.randint(1,100)
+        if list_num not in x:
+            x.append(list_num)
+            counter += 1
+    print(x)
+    count = 1
+    order_wise = []
+    print("Randomly picked 5 num from the list:")
+    #randomly picking any 5 num from list
+    z = random.sample(x,5)
+    print(z)
+    #comparing the between user input to randomly picking num
+    for i in x:
+        for j in z:
+            if i == j:
+                #storing the original values in the different list
+                order_wise.append(i)
+                break
+    print("Getting back the original inputs:")
+    print(order_wise)
+            
+#main program starts from here
+main()
