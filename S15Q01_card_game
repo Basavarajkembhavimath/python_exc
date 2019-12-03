@@ -1,0 +1,49 @@
+"""
+
+S15Q01
+You invited 10 friends to your house to play a game. 
+Each one is asked to pick a card that contains a number between 99 and 999. 
+The one with the maximum number wins the game. 
+Simulate this game using Python
+   - Which cards did each one pick ? 
+   - Who won the game ?
+
+"""
+import random
+
+def sec(x):
+    return int(x[1])
+
+
+def main():
+    #10 friends names
+    print("10 friends names :")
+    friends_name = "basu ravi hanish netra jagadish  venkat ramu andy suri vishwa"
+    print(friends_name)
+    #Generating 10 card numbers
+    print("10 picked card numbers")
+    x = random.sample(range(99,999),10)
+    #Creating list of names n corresponding numbers
+    frnd_card = []
+    print(x)
+    y = 0
+    #Spliting list of string friends_name  
+    friends_name = friends_name.split()
+    #gatting names & corresponding numbers and adding name & numbers
+    for i in friends_name:
+        name_num = (i +':'+' '+ str(x[y]))
+        print(name_num)
+        y = y + 1
+        spl = name_num.split()
+        #adding to the list
+        frnd_card.append(spl)
+    #sorting the names by number 
+    frnd_card.sort(key = sec)
+    #Printing the result who wone the match
+    print("WINNER OF THE GAME IS : ")
+    print(frnd_card[-1])
+    
+    
+
+        
+main()
