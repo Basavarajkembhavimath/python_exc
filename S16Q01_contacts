@@ -1,0 +1,24 @@
+"""
+S16Q01
+Write a Python program that takes a file name as its argument. 
+This file contains names of people and their corresponding contact numbers. 
+
+Read the file, and print the list in the ascending order of their names. 
+A sample file [ CONTACT_LIST.TXT ] is shown below :
+
+"""
+
+import sys
+def main():
+    a = sys.argv[1]
+    contacts = dict()
+    with open(a) as file:
+        FH = file.readlines()
+        for i in FH:
+            splt = i.split(':')
+            contacts[splt[0]] = int(splt[1])
+        print("Contact list sorted in assending order :")
+        for key in sorted(contacts):
+            print(key,contacts[key])
+
+main()
