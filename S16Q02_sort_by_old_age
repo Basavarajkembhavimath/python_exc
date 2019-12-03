@@ -1,0 +1,33 @@
+"""
+
+S16Q02
+Write a Python program that prompts the user for a file. 
+This file contains names of people and their ages. 
+
+Read the file, and print the list with the oldest person’s name listed first. 
+A sample file [ AGES.TXT ] is shown above :
+
+"""
+def sec(x):
+    return int(x[1])
+def main():
+    a = input("Enter your file name :")
+    old_age_names = dict()
+    name_age = []
+    with open(a) as file:
+        FH = file.readlines()
+        for i in FH :
+            s = i.strip()
+            splt = s.split('=')
+            name_age.append(splt)
+        name_age.sort(key = sec)
+        print("sorted based on age in assending order")
+        for j in name_age:
+            print(j)
+            old_age_names[j[0]] = int(j[1])
+        print("listed names based on oldest age")
+        for i in sorted(old_age_names,key = old_age_names.get,reverse=1):
+            print(i,old_age_names[i])
+
+    
+main()
