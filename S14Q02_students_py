@@ -1,0 +1,39 @@
+"""
+
+S14Q02
+Create a text file called “students.txt”. 
+Each line should be of the form
+“student_name : student_marks”
+
+- Write a Python program to read the contents from this file.
+- Print the names and marks of all students 
+      who have scored more than 90% marks, 
+      in ascending order of their marks.
+
+
+"""
+def user_input():
+    name = input("enter the student name")
+    marks = int(input("enter the total marks"))
+    return name,marks
+def sec(x):
+    return int(x[1])
+
+with open("students.txt") as file:
+    FH = file.readlines()
+    a_grade = []
+    for line in FH:
+        slp_line = line.strip()
+        slp_line = slp_line.split(':')
+        if int(slp_line[1]) >= 90:
+            a_grade.append(slp_line)
+    print("These students scored more then 90%")
+    for i in a_grade:
+        print(i)
+        
+    a_grade.sort(key = sec)
+    print("sorted students marks list :",'\n')
+    for i in a_grade:
+        print(i[0],':',i[1])
+                           
+        
