@@ -27,7 +27,7 @@ def main():
             old_age_names[j[0]] = int(j[1])
         print("listed names based on oldest age")
         for i in sorted(old_age_names,key = old_age_names.get,reverse=1):
-            print(i,old_age_names[i])
+            print(i,'-',old_age_names[i])
 
     
 main()
