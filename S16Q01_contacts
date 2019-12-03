@@ -19,6 +19,6 @@ def main():
             contacts[splt[0]] = int(splt[1])
         print("Contact list sorted in assending order :")
         for key in sorted(contacts):
-            print(key,contacts[key])
+            print(key,':',contacts[key])
 
 main()
