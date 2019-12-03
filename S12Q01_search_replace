@@ -14,19 +14,23 @@ def user_input():
     x = input("enter your word to search : ")
     y = input("enter your word to replace : ")
     return x,y
-i = sys.argv[1]
-with open(i)as note:
-    fh = note.readlines()
-    for i in fh:
-        print(i)
-    a = sys.argv[2]
-    b = sys.argv[3]
-    for line in fh:
-        if a in line:
-            search = line.find(a)
-            print("your searched location is :",search,"\n")
-            replac = line.replace(a,b)
-            print("the word: ",a,",replaced with the word of:",b,",in this line: ","\n",line,"\n",replac)
-            break
-    else:
-        print("Your searched word is not in the paragrafh ") 
+
+def main():
+    c = sys.argv[1]
+    with open(c)as note:
+        fh = note.readlines()
+        new_file = open(c,'w')
+        for i in fh:
+            print(i)
+        a,b = user_input()
+        
+        for line in fh:
+            if a in line:
+                replac = line.replace(a,b)
+                new_file.write(replac)
+                print("the word: ",a,",replaced with the word of:",b,",in this line: ","\n",line,"\n",replac)
+            else:
+                new_file.write(line)
+
+#main program starts from here
+main()
