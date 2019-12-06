@@ -1,0 +1,60 @@
+
+
+def file(x):
+    with open(x) as fl:
+        FH = fl.readlines()
+        return FH
+def supper_market():
+    a = "bill.txt"
+    b = "items.txt"
+    f = file(a)
+    item = file(b)
+    bill = {}
+    grad_total = 0
+    for i in f[4:20]:
+        m = i.strip()
+        splt = m.split(':')
+        splt_1 = splt[1].split()
+        splt_2 = splt[0].split('.')
+        splt_3 = splt_2[1].split()
+        bill[splt_3[0]] = splt_1[0]
+        grad_total = grad_total + int(splt_1[0])
+    for i in item:
+        i = i.strip()
+        if i in bill:
+            del bill[i]
+    bill_total = 0
+    count = 1
+    print("# Your Super Market Itemised Bill")
+    print("=======================")
+    print("Sl. Item      :  Amount")
+    print("=======================")
+    for i,j in bill.items():
+        string = i.center(12)
+        just = str(count)+'  '+i
+        center = ':'
+        nu = str(count)+'.'
+        bill_total = bill_total+int(j)
+        if len(just) != 16 and len(nu) != 4:
+            ln = 12 - len(just)
+            ln = ' '*ln
+            numl = 4 - len(nu)
+            numl = ' ' * numl
+            total = nu+numl+i+ln
+            if len(total) != 16:
+                tl = 14 - len(total)
+                tl = (tl*' ')
+                print(total+tl+':'+j.rjust(8))
+        count += 1
+    saved_rs = grad_total - bill_total
+    print()
+    print("=======================")
+    print("TOTAL         :   ",bill_total)
+    print("=======================")
+    print("** Saved Rs.",str(saved_rs)+'.00/- **')
+    print("# All amounts include GST")
+    print("# Please visit again")
+        
+        
+supper_market()
+
