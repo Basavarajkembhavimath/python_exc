@@ -1,0 +1,40 @@
+def file(x):
+    with open(x) as fl:
+        FH = fl.read()
+        return FH
+
+def Oliver_Twist():
+    a = "Oliver_Twist.txt"
+    lst = ['H','Y','W','T','h','y','w','t']
+    fh = file(a)
+    fh = fh.split()
+    data = []
+    data_2 = {}
+    data_3 = {}
+    print("The top most frequently occuring words in the book :")
+
+    for i in fh:
+        strp = i.strip(',')
+        strp = strp.strip('.')
+        strp = strp.strip("'")
+        data.append(strp.strip())
+
+    for i in data:
+        if i not in data_2:
+            data_2[i] = data.count(i)
+    for i in sorted(data_2,key = data_2.get,reverse = 1):
+        data_3[i] = data_2[i]
+    c = 0
+
+    for i,j in data_3.items():
+        k = i[0]
+        if c != 50: 
+            if len(i) > 4 and k not in lst :
+                c += 1
+                print(str(c)+'.',i,data_3[i])
+                
+        else:
+            break 
+
+
+Oliver_Twist()
