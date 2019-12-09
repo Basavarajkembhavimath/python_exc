@@ -1,34 +1,30 @@
 import random
+import sys
 def seed(x):
     with open(x) as file:
-        FH = file.readlines()
+        FH = file.read()
         return FH
 
-def slice1(a,Len,le=10):
-    data = ""
-    Len1 =Len + le 
-    with open(a) as file:
-        words = ''
-        FH = file.read()
-        print(FH)
-        for i in FH:
-            ltr = i.strip()
-            words += ltr
-        f = FH[Len:Len1]
-        #data= data+f
-        if len(f) == 50:
-            lis = f.split(',')
-            random.shuffle(lis)
-            print(lis)
-            for i in lis:
-                data = i+data
-            return data
+def slice1(end=10,start=0,lent=0):
+    a = "story.txt"
+    fh = seed(a)
+    data = ''
+    Len1 =start + end
+    words = ''
+    for i in fh:
+        ltr = i.strip()
+        words += ltr
+    f = fh[start:Len1]
+    return(f)
+    count = 0
+    if len(f) >= 50:
+        lis = f.split(' ')
+        random.shuffle(lis)
+        for i in lis:
+            data = i+' '+data
+        print("shuffled and different output :")
+        return(data)
 
 
-a = "story.txt"
-seed(a)
-q = slice1(a,1,50)
-c = 0
-#slice1(a,13)
-i = 0
-print(q,len(q))
+v = slice1(50,5,30)
+print(v)
