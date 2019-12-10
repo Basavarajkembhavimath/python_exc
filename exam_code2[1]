@@ -6,8 +6,8 @@ def seed(x):
         return FH
 
 def slice1(end=10,start=0,lent=0):
-    a = "story.txt"
-    fh = seed(a)
+
+    fh = seed(sys.argv[1])
     data = ''
     Len1 =start + end
     words = ''
@@ -15,16 +15,46 @@ def slice1(end=10,start=0,lent=0):
         ltr = i.strip()
         words += ltr
     f = fh[start:Len1]
-    return(f)
+    if len(f) < 50:
+        return f
     count = 0
     if len(f) >= 50:
         lis = f.split(' ')
         random.shuffle(lis)
         for i in lis:
             data = i+' '+data
-        print("shuffled and different output :")
         return(data)
 
+#main starts here
+if __name__=="__main__":
 
-v = slice1(50,5,30)
-print(v)
+    v = slice1(50)
+    print(v)
+
+
+
+#story maker.py
+import windows
+def story():
+    
+    
+    result = windows.slice1(40,15,50)
+    fh = open("your_story.txt",'w')
+    fh.write(result)
+    fh.write('\n')
+    fh.write("created by story_maker.py")
+    result1 = windows.slice1(20,50)
+    fh.write('\n')
+    fh.write(result1)
+    result2 = windows.slice1(15)
+    fh.write('\n')
+    fh.write(result2)
+    inpt = input("enter your name :")
+    fh.write('\n')
+    fh.write("copyright ")
+    fh.write(inpt)
+    fh.write(" 2019.")
+    
+
+story()
+
