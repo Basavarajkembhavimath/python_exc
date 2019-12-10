@@ -1,0 +1,54 @@
+"""
+
+S12Q02
+Write a program that generates a HTML file. 
+Prompt the user for webpage title and webpage body contents. 
+The webpage body should contain 
+    one main header, 
+    one sub header, and 
+    at least 2 paragraphs.
+
+A sample output is shown below
+
+"""
+
+file = open("html_file.txt",'w')
+file.write("\n")
+file.write("           webpage.html")
+file.write("\n")
+file.write("\n")
+file.write("\n")
+file.write("<html>")
+file.write("\n")
+file.write("  <head>")
+file.write("\n")
+file.write("     <title>")
+file.write("\n")
+file.write("           My Webpage title</h2>")
+file.write("\n")
+file.write("     </title>")
+file.write("\n")
+file.write("  </head>")
+file.write("\n")
+file.write("  <body> ")
+file.write("     <h1>webpage Banner </h1>")
+file.write("\n")
+file.write("     <p> This is a simple story")
+file.write("\n")
+file.write("         for my first webpage")
+file.write("\n")
+file.write("     </p>")
+file.write("\n")
+file.write("     <p> this is a how my sample")
+file.write("\n")
+file.write("         story ends")
+file.write("\n")
+file.write("     <p>")
+file.write("\n")
+file.write(" </body>")
+file.write("\n")
+file.write("</html>")
+file.write("\n")
+file.write("\n")
+file.close()
+
