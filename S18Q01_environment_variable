@@ -1,0 +1,55 @@
+"""
+
+Shell Environment variables are shown below.
+
+- Use “keys()” and “items()” methods to print the
+names of all the environment variables
+
+- Which environment variables has the longest name ?
+
+- Print the names of all the environment variables in a sorted order
+
+- Print the names and values of environment variables in the following format :
+
+- NAME                     = value1
+- MORE_NAME        = longer_value2
+- ANOTHER_NAME = val
+- HOME                    = some_value_3
+
+"""
+
+def file():
+    with open("shell.txt") as file:
+        FH = file.readlines()
+        return FH
+
+
+def main():
+    variabls = {}
+    names = ''
+    lnth = []
+    fh = file()
+    for i in fh:
+        splt = i.split('=')
+        variabls[splt[0]] = splt[1]
+    key = variabls.keys()
+    for i in variabls:
+        lnth.append(len(i))
+        names = names+i+' '
+    names = names.split(' ')
+    maxi = max(lnth)
+    print("All the names in sorted order :")
+    for i,j in sorted(variabls.items()):
+        space = maxi - len(i)
+        space = (space+2)*' '
+        print(i+space+'= '+j)
+        if maxi == len(i):
+            long_word = i+space+'= '+j
+    print("It is the longest environmental variable :")
+    print(long_word)
+
+
+main()
+
+
+
