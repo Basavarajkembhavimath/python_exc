@@ -1,0 +1,61 @@
+"""
+
+S17Q01
+Write a Python program that takes a file name as its argument. 
+This program should count the occurrences of all the words in a file.
+
+   - It should then print the top 10 most repeated words 
+        in the descending order of their count.
+   - Print a separate list of all the words that
+        are not repeated in that file.
+
+
+"""
+
+def file(x):
+    with open (x) as f1:
+        FH = f1.read()
+        return FH
+
+def main():
+    a = "chapter.txt"
+    fh = file(a)
+    fh = fh.split()
+    not_repeted = {}
+    not_rep =[]
+    data = []
+    data_2 = {}
+    data_3 = {}
+    print("The top most frequently occuring words in the file :\n")
+
+    for i in fh:
+        strp = i.strip(',')
+        strp = strp.strip('.')
+        strp = strp.strip("'")
+        data.append(strp.strip())
+
+    for i in data:
+        if i not in data_2:
+            data_2[i] = data.count(i)
+    for i in sorted(data_2,key = data_2.get,reverse = 1):
+        data_3[i] = data_2[i]
+        if int(data_2[i]) == 1:
+            not_repeted[i]=data_2[i]
+        
+
+    c = 0
+    for i,j in data_3.items():
+        if c != 10:
+            c += 1
+            print(str(c)+'.',i,data_3[i])
+        else:
+            break
+    print("\nThese words are not repeted in the file :\n")
+    for i,j in not_repeted.items():
+        not_rep.append(i)
+    print(not_rep)
+
+#main starts from here
+main()
+
+
