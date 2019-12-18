@@ -1,0 +1,49 @@
+"""
+
+S18Q02
+The lap speeds recorded for 
+     Michael Schumacher,  
+     Montoya Juan-Pablo and 
+     Barrichello Rubens in a F1 race are
+
+( 258.626, 255.931, 258.998, 255.195 ), 
+(258.680, 257.925, 259.828, 257.422) and 
+(258.405, 256.700, 260.395) respectively
+
+- Find the fastest lap for each driver
+- Find the average speed for each driver
+- Which driver has recorded the fastest lap ?
+- Which driver has the fastest lap average ?
+
+- Print the data in the following formats
+
+"""
+
+
+lst = ['Michael Schumacher','Montoya Juan-Pablo','Barrichello Rubens']
+R1 = [258.626, 255.931, 258.998, 255.195]
+R2 = [258.680, 257.925, 259.828, 257.422]
+R3 = [258.405, 256.700, 260.395]
+race = {}
+r1 = []
+race[lst[0]] = R1
+race[lst[1]] = R2
+race[lst[2]] = R3
+count = 0
+add  = 0
+for i in R1:
+    for j in R2:
+        if i > j:
+            r1.append(i)
+    add = add + (i)
+print(r1)
+
+
+
+
+
+
+
+
+
+
