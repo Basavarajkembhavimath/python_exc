@@ -1,0 +1,51 @@
+"""
+
+
+S17Q03 - Phonebook Search Program
+Write a Python program that takes a file name as its argument. 
+This file contains names of people and their corresponding contact numbers.
+
+- Prompt the user to enter a few characters to search for.
+- Print all the names that contain this sequence of characters 
+     in the ascending order of their names
+
+"""
+import sys
+def file_open(x):
+    with open(x) as file:
+        FH = file.readlines()
+        return FH
+
+def phone_book():
+    count = 0
+    c = 0
+    fh = file_open(sys.argv[1])
+    info = input("Serch word :")
+    phone_book = []
+    contact = {}
+    for i in fh:
+        strp = i.strip()
+        strp = strp.split(":")
+        contact[strp[0]] = strp[1]
+        inf = info.title()
+        low = info.lower()
+    print("Your Serched result :",info," is :","\n")
+    for i in contact:
+        if inf in str(i):
+            al = i+':'+contact[i]
+            phone_book.append(str(al))
+            count += 1
+        if count == 0:
+            if low in str(i):
+                al = i+':'+contact[i]
+                phone_book.append(str(al))
+                c += 1
+                
+    for i in sorted(phone_book):
+        print(i)
+    
+    if count < 1 and c < 1:
+        print(" Not fund :")
+        
+
+phone_book()
