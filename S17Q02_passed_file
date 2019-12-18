@@ -1,0 +1,27 @@
+"""
+
+S17Q02
+Read passwd file and list all users mentioned in that file in
+ascending order of their user id. 
+Also mention the user’s real name and home directory in the output. 
+A sample passwd file is shown below :
+
+"""
+def sec (x):
+    return x[1]
+with open("password.txt") as file:
+    FH = file.readlines()
+    user = {}
+    user_id= []
+    for i in FH:
+        strp = i.strip()
+        strp = strp.split(":")
+        user_id.append(strp)
+    user_id.sort(key = sec)
+    for i in user_id:
+        lst = ':'+i[2]+':'+i[3]+':'+i[4]+':'+i[5]+':'+i[6]
+        user[i[0]] = lst
+    for i in user:
+        print(i,user[i])
+    
+        
