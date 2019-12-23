@@ -18,30 +18,71 @@ The lap speeds recorded for
 - Print the data in the following formats
 
 """
+def forloop(lst):
+    result = 0
+    for num in lst:
+        result = result + num
+    return result
 
+def fastlap(lst):
+    num1 = 0
+    for num in lst:
+        if num > num1:
+            num1 = num
+    return num1
 
 lst = ['Michael Schumacher','Montoya Juan-Pablo','Barrichello Rubens']
 R1 = [258.626, 255.931, 258.998, 255.195]
 R2 = [258.680, 257.925, 259.828, 257.422]
 R3 = [258.405, 256.700, 260.395]
 race = {}
-r1 = []
-race[lst[0]] = R1
-race[lst[1]] = R2
-race[lst[2]] = R3
-count = 0
-add  = 0
-for i in R1:
-    for j in R2:
-        if i > j:
-            r1.append(i)
-    add = add + (i)
-print(r1)
+fastest_lap_drive = {}
+fastest_lap_av = {}
 
+race[lst[0]] = fastlap(R1)
+race[lst[1]] = fastlap(R2)
+race[lst[2]] = fastlap(R3)
 
+total_r1 = forloop(R1)
+total_r2 = forloop(R2)
+total_r3 = forloop(R3)
+r1 = total_r1/4
+r2 = total_r2/4
+r3 = total_r3/3
 
+print("Fastest lap of each driver is :")
+for i in race:
+    print(i,':',race[i])
+    fastest_lap_drive[i] = race[i]
+    
+print("\nAverage speed of each driver is :")
+print((lst[0]),':',r1)
+print((lst[1]),':',r2)
+print((lst[2]),':',r3)
 
+fastest_lap_av[lst[0]] = r1
+fastest_lap_av[lst[1]] = r2
+fastest_lap_av[lst[2]] = r3
 
+fast = 0
+fastest_lap_average = 0
+name = 0
+fastest = 0
+for i in race:
+    if int(race[i]) > fast:
+        fast = (race[i])
+print("\nfastest lape in the race is :")
+for i in fastest_lap_drive:
+    if int(fastest_lap_drive[i]) > (fastest):
+        fastest = fastest_lap_drive[i]
+        name1 = i
+print(name1,':',fastest)
+for i in fastest_lap_av:
+    if fastest_lap_av[i] > fastest_lap_average:
+        fastest_lap_average = fastest_lap_av[i]
+        name = i
+print("\nfastest lap average recorded is :")
+print(name,':',fastest_lap_average)
 
 
 
