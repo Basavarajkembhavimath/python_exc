@@ -1,12 +1,10 @@
-# python_exc
-
-
 n=int (input ("enter"))
-c = 1
-print (n)
+n = 5
+c = 0
 while  c<=9:
     c = c+1
     b = n*c
-    print (b)
-
-    
+    x = str(n)+" X "+str(c)+" "
+    if len(str(c)) > 1:
+    	x = str(n)+" X "+str(c)
+    print (x,"=",b)
