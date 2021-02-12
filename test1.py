@@ -34,16 +34,16 @@ with open("first_test.txt") as file:
                 if query[0] in page:
                     idx = get_idx(page, query[0])
                     if idx == 0:
-                        p = 'p'+str(p_num)
+                        p = 'P'+str(p_num)
                         temp.append(p)
                     else:
-                        p = 'p'+str(p_num)
+                        p = 'P'+str(p_num)
                         if p not in temp2:
                             temp2.append(p)
 
             if len(query) >= 2 :
                 if query[0] in page and query[1] in page :
-                    p = 'p'+str(p_num)
+                    p = 'P'+str(p_num)
                     #print("and",query)
                     if len(page) == 2:
                         temp.append(p)
@@ -57,25 +57,25 @@ with open("first_test.txt") as file:
                     idx = get_idx(page, query[0])
                     #print("and",query)
                     if idx == 0:
-                        p = 'p'+str(p_num)
+                        p = 'P'+str(p_num)
                         if p not in temp and p not in temp2:
                             temp.append(p)
                             #print("q 0 if",page,temp)
                     else:
-                        p = 'p'+str(p_num)
+                        p = 'P'+str(p_num)
                         if p not in temp and p not in temp2:
                             temp2.append(p)
                             #print("q 0 else",page,temp2)
 
                 if query[1] in page:
                     idx = get_idx(page, query[1])
-                    p = 'p'+str(p_num)
+                    p = 'P'+str(p_num)
                     if idx == 0:
                         if p not in temp and p not in temp2:
                             temp2.append(p)
                             #print("q 1 if",page,temp)
                     else:
-                        p = 'p'+str(p_num)
+                        p = 'P'+str(p_num)
                         if p not in temp and p not in temp2:
                             temp3.append(p)
                             #print("q 1 else",page,temp3)
