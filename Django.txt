@@ -1,0 +1,59 @@
+What is django?
+	Django is a python web framework its allow us to write pyhon code that is able to dynamically generate
+HTML and CSS, and ultimately allowing us to build a dynamic web application.
+
+* In the HTML and CSS also we build the web applications but those applications are static and (Identical) web pages. 
+That means there will be no continuous changes in the applications.
+Thats why we find a best way to make powerfull webpages with the help of django.
+
+What is HTTP (Hyper Text Transfer Protocol)?
+Which is the protocol for how messages are going to be sent back and forth over the internet.
+
+How it works?
+Assume we have a computer and the server so in the computer user(clint) will send(make) the request to the server.
+here the server contains our Django web application that is going to run on this server.
+Then clint will make request to server and server will process that request and then return some sort of response. to the clint.
+
+Ex for request : 
+Get/ HTTP/1.1
+Host: www.example.com
+...
+
+Ex for response :
+HTTP/1.1 200 ok
+Content-Type: text/html
+...
+
+Some of the main HTTP Status Codes
+	Status code		Description
+	200		- 	Ok
+	301		-	Moved permanently 
+	403		-	Forbidden
+	404		-	Not Found
+	500		-	Internet Server Error
+ 
+200 : ok means everything is fine
+404 : the web page is doesn't exist
+301 : moved permanently it means redirecting to on page to another
+403 : Forbidden means your not suppose to access the web page.
+500 : internet server error means some sort of internal server error. somthing bug in the code.
+
+Install the django using pip install django
+Ok Let's get started building our first project in django.
+=> write in command : django-admin startproject PROJECT_NAME
+The django will create a cupple of files in the django project.
+1. --init--.py
+2. asgi.py
+3. settings.py
+4. urls.py
+5. wsgi.py
+6. manage.py
+
+manage.py : here we will not touch that file but we will exicute the commands over the manage.py
+Settings.py : It contains the important configuaration settings as well and
+also some defalt settings aslo those settings we can modify if we want means.
+urls.py   : It as a table of content its having the all the required urls.
+
+
+
+
