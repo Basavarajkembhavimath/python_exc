@@ -1,0 +1,79 @@
+What is SQL ?
+	
+SQL is a database language that we can use to intract with databases
+And Django is going to allow us to have an abstraction layers on top of SQL.
+to intract with the SQL.
+
+What is migration ?
+Migrations are going to be a technique that are going to allow us to update our database in response to changes that we make to our underlying models.
+
+Relational databases.
+
+More about the SQL:
+SQL is a database language that is designed to intract with relations database management systems. Databases that organize data into tables where every table has rows and columns.
+And it turns out, there are a number of different database management systems that implement parts of the SQL standerd of this type of language.
+
+Papular database management systems are:
+My SQL
+PostgreSQL
+SQLite
+Usually mysql and postgresql are used in server side database intract with and most of the companies are using these two.
+Sqlite is a bit of a simpler lighter weight implementation of the sql standard.
+
+Types of eatch SQL languages:
+SQLite Data Types:
+Text	: text content
+Numeric	: Numerical data like date, some nuber of values 
+Integer	: integer numbers ex: 0 1 2 3 so on and negative numbers to ex: -1 -2 -3 so on
+Real	: these are after the decimal point numbers like ex: 2.8 4.3 6.9 so on
+Blob	: Binary large object like any kind of binary values.
+
+MySQL Data Types
+Char (size)	: Its use to difine the lenght of the string 
+Varchar(size)	: its also same as char and here it will automatically adjust the lenght
+Smallint	: Small bite of data integer values can store
+Int		: Mediam bite of data integer values can be store
+Bigint		: Big size of integer values can be stored
+Float		: Allow us to store floating point numbers
+Double		: Allow us to store more precission values of floating numbers
+
+some examples:
+Creating a simple database
+CREATE TABLE flights(
+			id INTEGER PRIMARY KEY AUTOICREMENT,
+			origin TEXT NOT NULL,
+			destination TEXT NOT NULL,
+			dutation INTEGER NOT NULL );
+
+Types of constrins:
+ 
+Check
+Default
+Not Null
+Primary Key
+Unique
+
+Inserting values to the flights database
+INSERT INTO flights 
+		(origin, destination, duration)
+        	VALUES ("New York", "London", 415)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
