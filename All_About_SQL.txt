@@ -57,7 +57,19 @@ Inserting values to the flights database
 INSERT INTO flights 
 		(origin, destination, duration)
         	VALUES ("New York", "London", 415)
+		
 
+If we want to Retrive the if its already present in the database we use SELECT query.
+Ex: 
+1. SELECT * FROM flights;
+2. SELECT origin, destination, FROM flights;
+3. SELECT * FROM flights WHERE id = 3;
+
+JOINs : The join query use to join the to columns are data
+
+CREATE INDEX : It is an additinal query it helps to get data based on the index values.
+
+SQL Injection : Its a kind of security related query to evaluate the query which you requested.
 
 
 
